@@ -23,7 +23,7 @@
             } ##else() {
                 <div class="col-md-6" id="contribute-column">
                 <h1>Submit an accessory</h1>
-                <p>The goal of HomeKitty is to be the central place of discovery for all HomeKit accessories. By contributing to our database, you can help many more people discover new, incredible possibilities.</p>
+                <p>The goal of AndroidDevices is to be the central place of discovery for all Android devices. By contributing to our database, you can help many more people discover new, incredible possibilities.</p>
                 <p>Simply fill out the following form with the required details, and we will add it to the website as soon as we have double-checked all the information. 🎉</p>
                 <hr>
                 <form action="/contribute/submit" method="POST">
