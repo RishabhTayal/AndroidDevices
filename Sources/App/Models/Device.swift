@@ -5,9 +5,9 @@
 import Vapor
 import FluentProvider
 
-final class Accessory: Model {
+final class Device: Model {
 
-    static var entity = "accessories"
+    static var entity = "device"
 
     let storage = Storage()
     
@@ -21,11 +21,11 @@ final class Accessory: Model {
     var productLink: String
     var approved: Bool
 
-    var category: Parent<Accessory, Category> {
+    var category: Parent<Device, Category> {
         return parent(id: categoryId)
     }
 
-    var manufacturer: Parent<Accessory, Manufacturer> {
+    var manufacturer: Parent<Device, Manufacturer> {
         return parent(id: manufacturerId)
     }
 
@@ -64,7 +64,7 @@ final class Accessory: Model {
     }
 }
 
-extension Accessory: NodeRepresentable {
+extension Device: NodeRepresentable {
 
     func makeNode(in context: Context?) throws -> Node {
         return try Node(node: [
@@ -80,7 +80,7 @@ extension Accessory: NodeRepresentable {
     }
 }
 
-extension Accessory: ResponseRepresentable {
+extension Device: ResponseRepresentable {
 
     func makeResponse() throws -> Response {
         var json = JSON()
@@ -96,7 +96,7 @@ extension Accessory: ResponseRepresentable {
     }
 }
 
-extension Accessory: Preparation {
+extension Device: Preparation {
 
     static func prepare(_ database: Database) throws {
         try database.create(self) { builder in
@@ -112,6 +112,6 @@ extension Accessory: Preparation {
     }
 
     static func revert(_ database: Database) throws {
-        try database.delete(Accessory.self)
+        try database.delete(Device.self)
     }
 }
