@@ -3,7 +3,7 @@
         <div class="navbar-header">
             <div>
                 <img src="/mstile-70x70.png" width="70" style="float:left; padding: 10px;">
-                <a class="navbar-brand" href="/">HomeKitty</a>
+                <a class="navbar-brand" href="/">AndroidDevices</a>
             </div>
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#()bs-example-navbar-collapse-1" aria-expanded="false">
                 <span class="sr-only">Toggle navigation</span>

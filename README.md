@@ -12,8 +12,8 @@
   </a>
 </p>
 
-# HomeKitty
-HomeKitty is a website built in [Vapor 2][1] that keeps track of all HomeKit accessories available in the market. Accessories are divided in 18 official categories to make it easier to find the perfect accessory for your needs. You can search any accessory by its name or manufacturer and directly open its official website to find more information.
+# AndroidDevices
+AndroidDevices is a website built in [Vapor 2][1] that keeps track of all HomeKit accessories available in the market. Accessories are divided in 18 official categories to make it easier to find the perfect accessory for your needs. You can search any accessory by its name or manufacturer and directly open its official website to find more information.
 
 ## Getting Started
 To get started with HomeKitty, make sure you have installed Vapor on your machine. Please follow the [official guide][2]. Make sure to also install PostreSQL since HomeKitty uses it as database. [Postgres app][3] should work fine.
@@ -21,12 +21,12 @@ To get started with HomeKitty, make sure you have installed Vapor on your machin
 Enough with the dependencies, clone the repo.
 
 ```bash
-$ git clone https://github.com/BalestraPatrick/HomeKitty
+$ git clone https://github.com/RishabhTayal/AndroidDevices
 ```
 You can now choose to build via command line, or use Xcode. Who doesn't love Xcode? 🛠
 
 - Terminal: `vapor build && vapor run serve`
-- Xcode: `vapor xcode -y` and then `CMD+r`.
+- Xcode: `vapor xcode -y` and then `CMD+R`.
 
 ## Architecture
 HomeKitty has a very simple architecture. The `Sources` folder contains two folders:
@@ -54,11 +54,13 @@ $ ./Scripts/seed.sh
 
 I'm [Patrick Balestra][6].
 Email: [me@patrickbalestra.com][7]
-Twitter: [@BalestraPatrick][8].
+Twitter: [@RishabhTayal][8].
+
+Special thanks to [@BalestraPatrick][9]
 
 ## License
 
-`HomeKitty` is available under the MIT license. See the [LICENSE][9] file for more info. 
+`AndroidDevices` is available under the MIT license. See the [LICENSE][10] file for more info. 
 Please don't re-publish the project as it is under your name. Feel free to use it a starting point for any of your other side projects though.
 
 
@@ -69,5 +71,6 @@ Please don't re-publish the project as it is under your name. Feel free to use i
 [5]:	https://homekitty-slack.herokuapp.com
 [6]:	http://www.patrickbalestra.com
 [7]:	mailto:me@patrickbalestra.com
-[8]:	http://twitter.com/BalestraPatrick
-[9]:	LICENSE
+[8]:	http://twitter.com/RishabhTayal
+[9]:	http://twitter.com/BalestraPatrick
+[10]:	LICENSE
