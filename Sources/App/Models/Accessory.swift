@@ -36,7 +36,7 @@ final class Accessory: Model {
         self.image = image
         self.price = price
         self.productLink = productLink
-        self.approved = approved
+        self.approved = approved 
     }
 
     init(row: Row) throws {
