@@ -19,6 +19,7 @@ final class Device: Model {
     var image: String
     var price: String
     var productLink: String
+    var viewsCount: Int
     var approved: Bool
 
     var category: Parent<Device, Category> {
@@ -29,7 +30,7 @@ final class Device: Model {
         return parent(id: manufacturerId)
     }
 
-    init(name: String, image: String, price: String, productLink: String, category: Identifier, manufacturer: Identifier, approved: Bool = false) {
+    init(name: String, image: String, price: String, productLink: String, category: Identifier, manufacturer: Identifier, approved: Bool = false, viewsCount: Int = 0) {
         self.name = name
         self.categoryId = category
         self.manufacturerId = manufacturer
@@ -37,6 +38,7 @@ final class Device: Model {
         self.price = price
         self.productLink = productLink
         self.approved = approved
+        self.viewsCount = viewsCount
     }
 
     init(row: Row) throws {
@@ -45,6 +47,7 @@ final class Device: Model {
         image = try row.get("image")
         price = try row.get("price")
         productLink = try row.get("product_link")
+        viewsCount = try row.get("views_count")
         approved = try row.get("approved")
         manufacturerId = try row.get("manufacturer_id")
         categoryId = try row.get("category_id")
@@ -59,6 +62,7 @@ final class Device: Model {
         try row.set("price", price)
         try row.set("product_link", productLink)
         try row.set("manufacturer_id", manufacturerId)
+        try row.set("views_count", viewsCount)
         try row.set("approved", approved)
         return row
     }
@@ -91,6 +95,7 @@ extension Device: ResponseRepresentable {
         try json.set("price", price)
         try json.set("product_link", productLink)
         try json.set("manufacturer_id", manufacturerId)
+        try json.set("views_count", viewsCount)
         try json.set("approved", approved)
         return try json.makeResponse()
     }
@@ -107,6 +112,7 @@ extension Device: Preparation {
             builder.string("image")
             builder.string("price")
             builder.string("product_link")
+            builder.int("views_count")
             builder.bool("approved")
         }
     }

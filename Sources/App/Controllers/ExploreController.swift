@@ -37,7 +37,7 @@ final class ExploreController {
         } else {
             // Get all accessories because no category was selected.
             accessories = try Device.makeQuery().filter("approved", true).all()
-            pageTitle = "All Accessories"
+            pageTitle = "All Devices"
             pageIcon = ""
         }
 
