@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="header.png">
+    <!--<img src="header.png">-->
 </p>
 <p align="center">
   <a href="https://circleci.com/gh/BalestraPatrick/HomeKitty">
@@ -7,7 +7,7 @@
   </a>
   <a href="https://swift.org">
     <img src="http://img.shields.io/badge/Swift-3.2-brightgreen.svg" alt="Language">
-  </a>  <a href="https://github.com/BalestraPatrick/HomeKitty/blob/master/LICENSE.md">
+  </a>  <a href="https://github.com/RishabhTayal/AndroidDevices/blob/master/LICENSE.md">
     <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="MIT License">
   </a>
 </p>
