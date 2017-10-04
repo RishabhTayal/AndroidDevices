@@ -48,7 +48,7 @@ final class ContributeController {
             let categoryName = request.formURLEncoded?["category"]?.string,
             let manufacturer = manufacturerId {
                 if let category = try Category.makeQuery().filter("name", categoryName).first() {
-                    let accessory = Accessory(name: name, image: image, price: price.normalizedPrice, productLink: link, category: category.id!, manufacturer: manufacturer)
+                    let accessory = Device(name: name, image: image, price: price.normalizedPrice, productLink: link, category: category.id!, manufacturer: manufacturer)
                     try accessory.save()
                 }
         }

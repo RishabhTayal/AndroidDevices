@@ -25,18 +25,18 @@ final class ExploreController {
         // Get all categories and find out if one of them is selected.
         let categories = try Category.all().select(selected: queryCategory)
 
-        let accessories: [Accessory]
+        let accessories: [Device]
         let pageTitle: String
         let pageIcon: String
 
         if let category = category {
             // Get all accessories for the selected category.
-            accessories = try Accessory.makeQuery().filter("approved", true).filter("category_id", category.id!.string!).all()
+            accessories = try Device.makeQuery().filter("approved", true).filter("category_id", category.id!.string!).all()
             pageTitle = category.name
             pageIcon = category.image
         } else {
             // Get all accessories because no category was selected.
-            accessories = try Accessory.makeQuery().filter("approved", true).all()
+            accessories = try Device.makeQuery().filter("approved", true).all()
             pageTitle = "All Accessories"
             pageIcon = ""
         }
@@ -56,7 +56,7 @@ final class ExploreController {
 
         // Only search through accessory and manufacturer name.
         let categories = try Category.all()
-        let accessories = try Accessory.makeQuery().filter("approved", true).all().filter { accessory -> Bool in
+        let accessories = try Device.makeQuery().filter("approved", true).all().filter { accessory -> Bool in
             let manufacturerResult = try accessory.manufacturer.get()?.name.lowercased().contains(search) ?? false
             let nameResult = accessory.name.lowercased().contains(search)
             return manufacturerResult || nameResult

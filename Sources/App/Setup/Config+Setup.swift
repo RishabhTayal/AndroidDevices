@@ -30,6 +30,6 @@ public extension Config {
     private func setUpPreparations() throws {
         preparations.append(Manufacturer.self)
         preparations.append(Category.self)
-        preparations.append(Accessory.self)
+        preparations.append(Device.self)
     }
 }

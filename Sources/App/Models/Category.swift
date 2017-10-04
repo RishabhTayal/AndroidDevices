@@ -16,7 +16,7 @@ final class Category: Model {
     var image: String
     var selected = false
 
-    var accessories: Children<Category, Accessory> {
+    var accessories: Children<Category, Device> {
         return children()
     }
     var accessoriesCount: Int {

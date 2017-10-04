@@ -19,7 +19,7 @@ final class Manufacturer: Model {
     var directLink: String {
         return "manufacturer?name=\(name)"
     }
-    var accessories: Children<Manufacturer, Accessory> {
+    var accessories: Children<Manufacturer, Device> {
         return children()
     }
 
