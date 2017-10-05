@@ -16,7 +16,7 @@
 AndroidDevices is a website built in [Vapor 2][1] that keeps track of all HomeKit accessories available in the market. Accessories are divided in 18 official categories to make it easier to find the perfect accessory for your needs. You can search any accessory by its name or manufacturer and directly open its official website to find more information.
 
 ## Getting Started
-To get started with HomeKitty, make sure you have installed Vapor on your machine. Please follow the [official guide][2]. Make sure to also install PostreSQL since HomeKitty uses it as database. [Postgres app][3] should work fine.
+To get started with AndroidDevices, make sure you have installed Vapor on your machine. Please follow the [official guide][2]. Make sure to also install PostreSQL since HomeKitty uses it as database. [Postgres app][3] should work fine.
 
 Enough with the dependencies, clone the repo.
 
@@ -37,7 +37,7 @@ HomeKitty has a very simple architecture. The `Sources` folder contains two fold
 There are some basic tests in the Tests folder. 
 
 ## Contributing
-We would love to have you onboard and help us shape the future of HomeKitty. We have a ton of new features and bug fixes ready for you in the [issues][4].
+We would love to have you onboard and help us shape the future of AndroidDevices. We have a ton of new features and bug fixes ready for you in the [issues][4].
 
 In case you need help or simply have a technical question, join us in the #development channel in our [Slack][5].
 

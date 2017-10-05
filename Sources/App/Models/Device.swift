@@ -80,6 +80,7 @@ extension Device: NodeRepresentable {
             "manufacturer_link": manufacturer.get()?.directLink,
             "manufacturer_website": manufacturer.get()?.websiteLink,
             "category_id": categoryId.string!,
+            "views_count": viewsCount
         ])
     }
 }
