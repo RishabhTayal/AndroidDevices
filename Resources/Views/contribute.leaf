@@ -4,11 +4,11 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="All HomeKit accessories in a single place.">
-    <meta name="author" content="Patrick Balestra">
-    <meta name="application-name" content="HomeKitty"/>
+    <meta name="description" content="All Android Devices in a single place.">
+    <meta name="author" content="Rishabh Tayal">
+    <meta name="application-name" content="AndroidDevices"/>
     <link rel="stylesheet" href="/css/explore.css">
-    <title>HomeKitty - Browse HomeKit Accessories</title>
+    <title>AndroidDevices - Browse Android Devices</title>
 }
 
 #export("body") {
@@ -31,7 +31,7 @@
                     <h4>Accessory</h4>
                     <div class="form-group">
                         <label for="name">Name</label>
-                        <p>Please provide the full name (ex: Philips Hue A13).</p>
+                        <p>Please provide the full name (ex: Google Pixel 2).</p>
                         <input type="text" class="form-control" name="name" placeholder="Name" required maxlength="255">
                     </div>
                     <div class="form-group">
@@ -41,13 +41,13 @@
                     </div>
                     <div class="form-group">
                         <label for="price">Price</label>
-                        <p>Please provide the price in $ (ex: $49.99).</p>
-                        <input type="text" class="form-control" name="price" placeholder="$49.99" required>
+                        <p>Please provide the price in $ (ex: $649).</p>
+                        <input type="text" class="form-control" name="price" placeholder="$649" required>
                     </div>
                     <div class="form-group">
                         <label for="link">Link</label>
                         <p>Please provide the direct link (to the official manufacturer page).</p>
-                        <input type="text" class="form-control" name="link" placeholder="http://www2.meethue.com/en-us/productdetail/philips-hue-white-extension-bulb-a19" required maxlength="255">
+                        <input type="text" class="form-control" name="link" placeholder="https://store.google.com/product/pixel_2" required maxlength="255">
                     </div>
 
                     <!-- Category -->
@@ -75,8 +75,8 @@
                         <div id="add-manufacturer-form">
                             <div class="form-group">
                                 <label for="manufacturer-name">Name</label>
-                                <p>Please provide the name (ex: Philips).</p>
-                                <input type="text" class="form-control" id="manufacturer-name-input" name="manufacturer-name" placeholder="Philips" maxlength="255">
+                                <p>Please provide the name (ex: Samsung).</p>
+                                <input type="text" class="form-control" id="manufacturer-name-input" name="manufacturer-name" placeholder="Samsung" maxlength="255">
                             </div>
                             <div class="form-group">
                                 <label for="website">Website</label>
