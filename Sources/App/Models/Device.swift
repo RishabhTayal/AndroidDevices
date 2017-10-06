@@ -20,6 +20,7 @@ final class Device: Model {
     var price: String
     var productLink: String
     var viewsCount: Int
+    var clapsCount: Int
     var approved: Bool
 
     var category: Parent<Device, Category> {
@@ -30,7 +31,7 @@ final class Device: Model {
         return parent(id: manufacturerId)
     }
 
-    init(name: String, image: String, price: String, productLink: String, category: Identifier, manufacturer: Identifier, approved: Bool = false, viewsCount: Int = 0) {
+    init(name: String, image: String, price: String, productLink: String, category: Identifier, manufacturer: Identifier, approved: Bool = false, viewsCount: Int = 0, clapsCount: Int = 0) {
         self.name = name
         self.categoryId = category
         self.manufacturerId = manufacturer
@@ -39,6 +40,7 @@ final class Device: Model {
         self.productLink = productLink
         self.approved = approved
         self.viewsCount = viewsCount
+        self.clapsCount = clapsCount
     }
 
     init(row: Row) throws {
@@ -48,6 +50,7 @@ final class Device: Model {
         price = try row.get("price")
         productLink = try row.get("product_link")
         viewsCount = try row.get("views_count")
+        clapsCount = try row.get("claps_count")
         approved = try row.get("approved")
         manufacturerId = try row.get("manufacturer_id")
         categoryId = try row.get("category_id")
@@ -63,6 +66,7 @@ final class Device: Model {
         try row.set("product_link", productLink)
         try row.set("manufacturer_id", manufacturerId)
         try row.set("views_count", viewsCount)
+        try row.set("claps_count", clapsCount)
         try row.set("approved", approved)
         return row
     }
@@ -72,6 +76,7 @@ extension Device: NodeRepresentable {
 
     func makeNode(in context: Context?) throws -> Node {
         return try Node(node: [
+            "id": id,
             "name": name,
             "image": image,
             "price": price,
@@ -80,7 +85,8 @@ extension Device: NodeRepresentable {
             "manufacturer_link": manufacturer.get()?.directLink,
             "manufacturer_website": manufacturer.get()?.websiteLink,
             "category_id": categoryId.string!,
-            "views_count": viewsCount
+            "views_count": viewsCount,
+            "claps_count": clapsCount
         ])
     }
 }
@@ -97,6 +103,7 @@ extension Device: ResponseRepresentable {
         try json.set("product_link", productLink)
         try json.set("manufacturer_id", manufacturerId)
         try json.set("views_count", viewsCount)
+        try json.set("claps_count", clapsCount)
         try json.set("approved", approved)
         return try json.makeResponse()
     }
@@ -114,6 +121,7 @@ extension Device: Preparation {
             builder.string("price")
             builder.string("product_link")
             builder.int("views_count")
+            builder.int("claps_count")
             builder.bool("approved")
         }
     }

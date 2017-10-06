@@ -16,6 +16,16 @@ final class ExploreController {
         explore.get(handler: self.explore)
         let search = explore.grouped("search")
         search.get(handler: self.search)
+        let clap = droplet.grouped("clap")
+        clap.post(handler: self.clap)
+    }
+    
+    func clap(request: Request) throws -> ResponseRepresentable {
+        let deviceId = request.formURLEncoded?["device_id"]?.string ?? ""
+        let device = try Device.makeQuery().filter("id", deviceId).first()
+        device?.clapsCount += 1
+        try device?.save()
+        return (try device?.makeResponse())!
     }
 
     func explore(request: Request) throws -> ResponseRepresentable {
