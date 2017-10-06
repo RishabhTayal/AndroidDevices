@@ -60,12 +60,10 @@
                                 <img src="#(accessory.image)" alt="#(accessory.name)" style="height:200px; object-fit: contain;">
                             </a>
                             <a href="#(accessory.product_link)" target="_blank"><h4>#(accessory.name)</h4></a>
-
-                            <!-- Use a submit button to send the data to the server -->
-                            <button id="clap-button-#(accessory.id)" onclick="clapClicked('#(accessory.id)')">#(accessory.claps_count)</button>
                         
                             <div style="position: absolute; left: 50%; bottom: 30px;">
                                 <div style="position: relative; left: -50%;">
+                                    <input type="submit" onclick="clapClicked('#(accessory.id)')" id="clap-button-#(accessory.id)" value="#(accessory.claps_count)"><img src="icons/clapping.svg" alt="Clap" style="margin-right:0.5em;width:20px"/></input>
                                     <h4>#(accessory.price)</h4>
                                     <p>By <a href="/#(accessory.manufacturer_link)">#(accessory.manufacturer)</a></p>
                                 </div>
